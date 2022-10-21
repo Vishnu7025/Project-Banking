@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Loged in {% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="pt-5 text-white">
+        <header class="py-5 mt-5">
+            <h1 class="display-4">“Business and life are like a bank account you can't take out more than you put in.”</h1>
+            <p class="lead mb-0">SBI's internet banking portal provides personal banking services that gives you
+                complete control over all your banking
+                demands online.</p>
+            <p class="lead mb-0">
+            <span style="color: blue;">Register for yono app click the below button.</span>
+                <br>
+              <a href="{% url 'form' %}"><button type="button" class="btn btn-secondary btn-lg">>>click here<<</button></a>
+                <br>
+                <hr>
+                <br>
+    </div>
+
+{% endblock %}

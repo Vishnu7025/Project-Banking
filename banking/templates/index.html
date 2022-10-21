@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Sate Bank of Inida {% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="pt-5 text-white">
+        <header class="py-5 mt-5">
+            <h1 class="display-4">“In banking or finance, trust is the only thing you have to sell.”</h1>
+            <p class="lead mb-0">SBI's internet banking portal provides personal banking services that gives you complete control over all your banking
+            demands online.</p>
+            <p class="lead mb-0">
+                for more details click below button
+                <br>
+               <a href="{% url 'login' %}"><button type="button" class="btn btn-primary btn-lg">>>click<<</button></a>
+                <br>
+                <br>
+            </p>
+            <img src="{% static '/images/cover.jpg'%}" class="d-block w-100" alt="...">
+            <br>
+    </div>
+    {% block script %}{% endblock %}
+    {% endblock %}

@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="icon" href="{% static '/images/sbi.png/' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="navbar navbar-expand-lg fixed-top py-3">
+            <div class="container"><a class="navbar-brand" href="/"><img src="{% static '/images/sbi.png' %}"
+                        class="img-fluid" width="52px">
+                    Stae Bank of India</a>
+                <button onclick="show_hide()" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                    class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
+
+                <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active"><a href="/" class="nav-link text-uppercase font-weight-bold">Home
+                                <span class="sr-only">(current)</span></a></li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link text-uppercase font-weight-bold">Logout</a></li>
+                        {% else %}
+                        <li class="nav-item"><a href="{% url 'login' %}" class="nav-link text-uppercase font-weight-bold">Login</a></li>
+                        <li class="nav-item"><a href="{% url 'register'%}" class="nav-link text-uppercase font-weight-bold">Register</a></li>
+                        {% endif %}
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                BRANCHES
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Thiruvananthapuram">Thiruvananthapuram</a></li>
+                                <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Kannur">Kannur</a></li>
+                                <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Kasaragod">Kasaragod</a></li>
+                                <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Kollam">Kollam</a></li>
+                                <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Kottayam">Kottayam</a></li>
+                                <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Kozhikode">Kozhikode</a></li>
+                                <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Malappuram">Malappuram</a></li>
+                            </ul>
+                        </div>
+                        <li class="nav-item"><a href="" class="nav-link text-uppercase font-weight-bold"></a></li>
+                        <li class="nav-item"><a href="" class="nav-link text-uppercase font-weight-bold"></a></li>
+                        {% if user.is_authenticated %}
+                       <li  class="nav-item"><a style="font-size: 25px;" class="nav-link text-uppercase font-weight-bold"><i class="fa fa-user" aria-hidden="true"></i>{{user.username}}</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    {% block content %} {% endblock %}
+
+
+    
+
+
+
+
+
+
+    <script>
+        function show_hide() {
+            var click = document.getElementById("navbarSupportedContent");
+            if (click.style.display === "none") {
+                click.style.display = "block";
+            } else {
+                click.style.display = "none";
+            }
+        }
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script> src = "{% static '/js/sj.js' %}"</script>
+</body>
+
+</html>

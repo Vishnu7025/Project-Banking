@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %}Form {% endblock %}
+
+{% block content %}
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+<div class="container w-50  my-5 ">
+    <br>
+    <br>
+    <br>
+    <br>
+        <h1 style="text-align: center;">Register for Yono app</h1>
+        {% for message in messages %}
+        <div class="alert alert-success" role="alert">
+            <i class="fa fa-check-circle" aria-hidden="true"></i> {{message}}!
+        </div>
+        {% endfor %}
+<form method="POST">
+    {% csrf_token %}
+    {{form|crispy}}
+    <br>
+        <button class="btn btn-primary" type="submit" style="  width: 500px;" type="button">Submit</button>
+</form>
+<br>
+<a href="{% url 'logout' %}" ><button class="btn btn-success" type="submit" style="  width: 500px;" type="button">Logout</button></a>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<script src="{% static 'js/orderDropdownSelection.js' %}"></script>
+
+    {% endblock %}

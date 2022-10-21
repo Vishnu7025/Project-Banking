@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Register{% endblock %}
+{% block content %}
+<style>
+    .signup-w3ls {
+        width: 50%;
+        margin: 70px 25% 80%;
+        padding: 0;
+        display: table;
+        position: relative;
+    }
+
+    .signup-agile1 {
+        width: 100%;
+        float: center;
+    }
+
+    .signup-w3ls .signup-agile1 .form-control {
+        margin-bottom: 20px;
+    }
+
+    label.header {
+        font-size: 16px;
+        font-weight: 500;
+        width: 215px;
+        color: grey;
+        margin-right: 10px;
+        text-align: justify;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        display: inline-block;
+        font-family: 'Nunito', sans-serif;
+    }
+
+    input#image,
+    input#store_name,
+    input#store_type,
+    input#owner_type,
+    input#id_password,
+    input#contact_number,
+    input#contact_email {
+        padding: 0 40px;
+        width: 40%;
+        height: 55px;
+        border: 1px solid #dadada;
+        color: grey;
+        text-align: justify;
+        outline: none;
+        letter-spacing: 1px;
+        font-size: 16px;
+        font-weight: normal;
+        font-family: 'Muli', sans-serif;
+        border-radius: 30px;
+        -webkit-border-radius: 30px;
+        -moz-border-radius: 30px;
+        -o-border-radius: 30px;
+        -ms-border-radius: 30px;
+    }
+
+    input#image:focus,
+    input#store_name:focus,
+    input#store_type:focus,
+    input#owner_type:focus,
+    input#id_password :focus,
+    input#contact_number:focus,
+    input#contact_email:focus {
+        background-color: #f5f8fa !important;
+        border: 1px solid #dadada;
+    }
+
+    input::-webkit-input-placeholder {
+        color: grey;
+    }
+
+    input:-moz-placeholder {
+        /* Firefox 18- */
+        color: grey;
+    }
+
+    input::-moz-placeholder {
+        /* Firefox 19+ */
+        color: grey;
+    }
+
+    input:-ms-input-placeholder {
+        color: grey;
+    }
+
+    .register {
+        background-color: rgb(38, 184, 38);
+        width: 52%;
+        height: 55px;
+        border: none;
+        margin-left: 233px;
+        cursor: pointer;
+        color: #fff;
+        outline: none;
+        font-size: 20px;
+        font-weight: normal;
+        text-transform: uppercase;
+        transition: all 0.5s ease-in-out;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        border-radius: 30px;
+        -webkit-border-radius: 30px;
+        -moz-border-radius: 30px;
+        -o-border-radius: 30px;
+        -ms-border-radius: 30px;
+        font-family: 'Muli', sans-serif;
+    }
+
+    .register:hover {
+        background-color: #36b051;
+        color: #fff;
+    }
+
+    
+</style>
+
+
+    <div class="signup-w3ls">
+        <div class="signup-agile1">
+            <br>
+            <h1 style="color:blue;">Register here!</h1>
+            <hr>
+            {% for message in messages %}
+            <div class="alert alert-primary" role="alert">
+                <i class="fa fa-exclamation-circle" aria-hidden="true"></i> {{message}}!
+            </div>
+            {% endfor %}
+            <form action="#" method="post">
+                {% csrf_token %}
+                <div class="form-control">
+                    <label class="header">User name :</label>
+                    <input type="text" id="store_type" name="username" placeholder="user name" title="Please enter your Last Name"
+                        required="">
+                </div>
+
+                <div class="form-control">
+                    <label class="header">Password :</label>
+                    <input  type="password" name="password1" autocomplete="current-password"
+                        required="" id="id_password">
+                    <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>
+                </div>
+                <div class="form-control">
+                    <label class="header">Confirm Password :</label>
+                    <input  type="password" name="password2" autocomplete="current-password" required=""
+                        id="id_password">
+                </div>
+                <input type="submit" class="register" value="register">
+
+            </form>
+        </div>
+    </div>
+
+
+
+
+        <script>
+           const togglePassword = document.querySelector('#togglePassword');
+            const password = document.querySelector('#id_password');
+
+            togglePassword.addEventListener('click', function (e) {
+                // toggle the type attribute
+                const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                password.setAttribute('type', type);
+                // toggle the eye slash icon
+                this.classList.toggle('fa-eye-slash');
+            });
+        </script>
+      
+    {% endblock %}
