@@ -1,3 +1,4 @@
+![Screenshot (41)](https://user-images.githubusercontent.com/105106551/197323173-c443c1f4-a7ba-455f-b6a2-277ad1bdaa9e.png)
 
 # Banking project
  ### A simple project for Banking. 
@@ -53,7 +54,6 @@ I’m a Python developer, curious to learn more about developing systems, loves 
  
 ## Screenshots
 ![Screenshot (40)](https://user-images.githubusercontent.com/105106551/197323166-2be6f58a-d35e-4484-914c-4b0ccdd317d6.png)
-![Screenshot (41)](https://user-images.githubusercontent.com/105106551/197323173-c443c1f4-a7ba-455f-b6a2-277ad1bdaa9e.png)
 ![Screenshot (42)](https://user-images.githubusercontent.com/105106551/197323177-906ac71a-e563-4dbe-9f20-f9e558a65f4c.png)
 ![Screenshot (43)](https://user-images.githubusercontent.com/105106551/197323182-260e2421-40fa-451a-92a7-2d1372d341ff.png)
 
